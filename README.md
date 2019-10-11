@@ -13,4 +13,5 @@ https://learning.oreilly.com/library/view/deep-learning/9781491924570/
 https://learning.oreilly.com/library/view/deep-learning-from/9781492041405/
 
 https://learning.oreilly.com/library/view/generative-deep-learning/9781492041931/
+
 ```
