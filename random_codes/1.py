@@ -31,30 +31,8 @@ def derv_relu(value):
     """
     docstring here
         :param value: 
-    """f value>0:
+    """if value>0:
         return 1
     else:
         return 0 
-
-
-
-from typing import Callable
-
-def deriv(func,
-         """
-    docstring here
-        :param func: 
-        :param input_: 
-        :param delta:float=0.001: 
-    """     input_,
-          delta: float = 0.001):
-    
-    return (func(input_ + delta) - func(input_ - delta)) / (2 * delta)
-
-
-
-
-
-
-
 

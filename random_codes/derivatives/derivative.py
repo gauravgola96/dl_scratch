@@ -47,7 +47,7 @@ def chain_derivative(function_list, ndarray):
     dgdx = derivative(g,ndarray)
     
     #f`(g(x)) = df/dx*g(x)
-    dfdx = derivative(f,g(ndarray))
+    dfdx = derivative(f,g_of_x)
     
     chain_derv =  dfdx * dgdx
     print('shape of derivative {}'.format(chain_derv.shape))
