@@ -1,5 +1,7 @@
 import numpy as np 
+from typing import Callable
 import matplotlib.pyplot as plt
+from plot import *
 
 
 def derivative(function,ndarray,delta=0.001):
@@ -51,7 +53,7 @@ def longer_chain_derivative(list_of_function , ndarray):
     return dfdx * dgdx * dhdx
     
     
-##### TEST : leaky_relu,sigmoid,square
+##### TEST : sigmoid,leaky relu,square
 
 def square(x):
     return np.power(2,x)
@@ -65,10 +67,5 @@ def leaky_relu(x):
 def sigmoid(x):
     return (1/(1+np.exp(-x)))
 
-list_of_function = [sigmoid,square,leaky_relu]
-ndarray = np.arange(-3,3,0.1)
 
-long_derv = longer_chain_derivative(list_of_function,ndarray)
-
-plt.plot(long_derv,ndarray)
-plt.savefig('long_derv.png')
+longer_chain_derivative(list_of_function=[sigmoid,square,leaky_relu],ndarray)
