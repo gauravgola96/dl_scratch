@@ -1,7 +1,5 @@
 import numpy as np 
-from typing import Callable
 import matplotlib.pyplot as plt
-from plot import *
 
 
 def derivative(function,ndarray,delta=0.001):
@@ -67,5 +65,7 @@ def leaky_relu(x):
 def sigmoid(x):
     return (1/(1+np.exp(-x)))
 
+ndarray = np.arange(-3,3,0.01)
 
-longer_chain_derivative(list_of_function=[sigmoid,square,leaky_relu],ndarray)
+longer_chain_derivative(list_of_function=[sigmoid,square,leaky_relu],ndarray=ndarray)
+        
