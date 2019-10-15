@@ -31,7 +31,7 @@ def multiple_inp_add_forward_backward(x, y, function):
         y {[type]} -- [one darray]
         function {[type]} -- [description]
     """
-    add = a = x + y 
+    add = x + y 
     
     #derivative 
     dsda = derivative(ndarray=add,function=function)
