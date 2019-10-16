@@ -34,3 +34,5 @@ def matmul_backward_second(X,W):
     return dNdW
 
 
+
+
