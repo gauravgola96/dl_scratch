@@ -58,4 +58,4 @@ def backward_matrix_X(x, w, function=sigmoid):
     
     return dSdN * dNdX
     
-    
+        

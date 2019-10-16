@@ -55,9 +55,3 @@ def matrix_mult_forward(x, y,):
 
 
 
-
-
-
-
-
-
