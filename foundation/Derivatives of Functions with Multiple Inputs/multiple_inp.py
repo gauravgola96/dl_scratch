@@ -31,7 +31,7 @@ def multiple_inp_add_forward_backward(x, y, function):
         y {[type]} -- [one darray]
         function {[type]} -- [description]
     """
-    add = a = x + y 
+    add = x + y 
     
     #derivative 
     dsda = derivative(ndarray=add,function=function)
@@ -52,12 +52,6 @@ def matrix_mult_forward(x, y,):
     assert x.shape[0] == y.shape[1], "Number of columns in first mat should match with number of rows in second mat"
     
     return np.dot(x,y) 
-
-
-
-
-
-
 
 
 
