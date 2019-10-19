@@ -19,9 +19,6 @@ def matmul_backward_first(X,
 # N = v(X,W) #dot product of X,W
 #The dNdX quantity computed here represents the partial derivative of each element of X with respect to the sum of the output N
 
-
-
-
 def matmul_backward_second(X,W):
     '''
     Computes the backward pass of a matrix multiplication with respect to the
