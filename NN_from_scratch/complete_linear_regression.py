@@ -6,8 +6,6 @@ ref: http://www.stat.yale.edu/Courses/1997-98/101/linreg.htm
 Equation : y = Bo + B1X1 + B2X2 + B3X3 + ...
 Each xi being multiplied by another element wi and then the results being added together
 Something we have done in foundation module code
-
-
 '''
 import numpy as np 
 
@@ -47,9 +45,46 @@ def linear_reg(X_ndarray , Y_ndarray, W):
 
     return loss, forward_info
 
-def derivative_mse_loss(Y,P):
-    return -2 * (Y-P)
+
+# Refer backpass.png
+def loss_gradients(forward_info, W):
+    """Calculate dLdW and dLdB
+    
+    Arguments:
+        forward_info {[type]} -- [description]
+        W {[type]} -- [description]
+    """
+    batch_size = forward_info['X'].shape[0]
+    
+    #L = np.power(Y - P,2)
+    dLdP = -2 * (forward_info['y'] - forward_info['P'])
+    
+    #P = np.dot(X,W) + B = X.W + B = N + B 
+    #dPbN = B #constant
+    #N = np.dot(X,W)
+    dPdN = np.ones_like(forward_info['N'])
+    
+    dPdB = np.ones_like(W['B'])
+    
+    #N = np.dot(x,W)
+    dNdW = np.transpose(forward_info['X'], (1,0))
+    
+    #NOW calculate dLdW
+    dLdN = dLdP * dPdN
+    ###################
+    dLdW = np.dot(dNdW , dLdN)
+    
+    #Now calculate dLdB
+    dLdB = np.dot(dLdP ,dPdB)
+    
+    loss_gradients = {}
+    loss_gradients['W'] = dLdW
+    loss_gradients['B'] = dLdB
+    
+    return loss_gradients
 
 
-
-
+# Basic intution for using learning rate in dict
+#this is how we can update Weights
+#for key in weights.keys():
+#    weights[key] -= learning_rate * loss_grads[key]
