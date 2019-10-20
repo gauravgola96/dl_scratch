@@ -82,10 +82,8 @@ def backpass(forward_info , W):
     dLdM2 = dLdP * dPdM2
     dLdO1 = np.dot(dLdM2, dM2dO1)
     dLdN1 = dLdO1 * dO1dN1
-
-    
-       
-    #dLdW1 = dLdP * dPdM2 * dM2dO1 * dO1dN1 * dN1dM1 * dM1dW1
+        
+        #dLdW1 = dLdP * dPdM2 * dM2dO1 * dO1dN1 * dN1dM1 * dM1dW1
     dLdM1 = dLdN1 * dN1dM1
     dLdW1 = np.dot(dM1dW1,dLdM1)
     
@@ -99,8 +97,12 @@ def backpass(forward_info , W):
     loss_gradients['W1'] = dLdW1
     loss_gradients['B1'] = dLdB1.sum(axis=0)
     
-    return dLdW1, dLdB1, dLdW2, dLdB2
-    
+    return dLdW1, dLdB1, dLdW2, dLdB2, loss_gradients
+
+# Basic intution for using learning rate in dict
+#this is how we can update Weights
+#for key in weights.keys():
+#    weights[key] -= learning_rate * loss_grads[key]    
     
     
 def predict(X_ndarray,W):        
