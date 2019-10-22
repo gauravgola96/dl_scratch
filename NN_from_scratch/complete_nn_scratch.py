@@ -120,3 +120,4 @@ def predict(X_ndarray,W):
     P = M2 + W['B2']
 
     return P
+
