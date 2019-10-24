@@ -1,0 +1,2 @@
+# Scratch implementation of ADAM ,SGD
+# SCRARCH Cross entropy , Batch Norm , backprop in batch norm

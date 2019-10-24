@@ -28,7 +28,7 @@ def forward_pass(X_ndarray, y_ndarray, W):
     
     P = M2 + W['B2']
     
-    loss = np.mean(np.power(p - y_ndarray,2))
+    loss = np.mean(np.power(P - y_ndarray,2))
     
     forward_info = {}
     forward_info['X'] = X_ndarray
