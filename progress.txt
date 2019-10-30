@@ -1,0 +1,21 @@
+# Scratch implementation of ADAM ,SGD
+# SCRARCH Cross entropy , Batch Norm , backprop in batch norm
+# Weight init concpets adn code
+# self attention
+
+transformers
+
+https://towardsdatascience.com/transformers-141e32e69591
+https://www.analyticsvidhya.com/blog/2019/09/demystifying-bert-groundbreaking-nlp-framework/
+https://mlexplained.com
+
+
+EMLO 
+https://www.analyticsvidhya.com/blog/2019/09/demystifying-bert-groundbreaking-nlp-framework/
+
+Best channel : 
+https://www.youtube.com/user/amirfzpr/videos
+
+
+NLSQL 
+https://web.stanford.edu/class/cs224n/reports/custom/15709203.pdf
