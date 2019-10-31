@@ -1,5 +1,5 @@
 """
-Batch normalization enables the use of higher learning rates. How?
+Batch normalization enables the use of higher learning rates.
 
 It is more the covariate shift(It is the title of Batch norm original paper) :  change in the distribution of the input values to a learning algorithm
 
@@ -11,9 +11,7 @@ Its success led to use of methods like layer normalization, weights normalizatio
 import numpy as np 
 
 #Refer batch_norm.png
-
-
-#gamma , beta are initiated with normal dist...
+#gamma , beta are initiated with normal distribution...
 #During backprop they will learn to normalize it better which makes it more powerdful
 
 def batch_norm(X_ndarray, gamma, beta, eps=0.01):
