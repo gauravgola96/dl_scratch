@@ -3,8 +3,7 @@ import numpy as np
 Prefer readme first
 '''
 
-def matmul_backward_first(X,
-                          W):
+def matmul_backward_first(X, W):
     '''
     Computes the backward pass of a matrix multiplication with respect to the
     first argument.
