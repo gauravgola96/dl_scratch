@@ -2,33 +2,39 @@ import random
 import numpy as np
 import math
 
+
 ##
 def sigmoid(x):
-    return (1.0/(1+np.exp(-x)))
+    return (1.0 / (1 + np.exp(-x)))
+
 
 def sigmoid_derivation(values):
-    dervative = values(1-values)
+    dervative = values(1 - values)
     return dervative
+
 
 def tanh(x):
     return np.tanh(x)
 
+
 def tanh_derivative(values):
-    derivative = 1 - values**2
+    derivative = 1 - values ** 2
     return derivative
 
-#probabilty distribution of uniform distribution is 1/(b-a)
-#interval [a.b)
+
+# probabilty distribution of uniform distribution is 1/(b-a)
+# interval [a.b)
 
 def rand_arr(a, b, *args):
     np.random.seed(1)
     return np.random.rand(*args) * (b - a) + a
 
-H_size = 100 # Size of the hidden layer
-T_steps = 25 # Number of time steps (length of the sequence) used for training
-learning_rate = 1e-1 # Learning rate
-weight_sd = 0.1 # Standard deviation of weights for initialization
-z_size = H_size + X_size # Size of concatenate(H, X) vector
+
+H_size = 100  # Size of the hidden layer
+T_steps = 25  # Number of time steps (length of the sequence) used for training
+learning_rate = 1e-1  # Learning rate
+weight_sd = 0.1  # Standard deviation of weights for initialization
+z_size = H_size + X_size  # Size of concatenate(H, X) vector
 
 
 class Param:
@@ -68,7 +74,3 @@ class Parameters:
     def all_layers(self):
         return [self.W_f, self.W_i, self.W_C, self.W_o, self.W_v,
                 self.b_f, self.b_i, self.b_c, self.b_o, self.b_v]
-
-
-
-
